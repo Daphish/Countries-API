@@ -1,0 +1,33 @@
+.header{
+    padding: 20px 0 0 0;
+}
+
+.header .container{
+    border-bottom: 1px solid black;
+}
+
+.header a{
+    text-decoration: none;
+    text-align: right;
+}
+
+@media (max-width: 549px){
+    .header a{
+        text-align: left;
+    }
+}
+
+#first-image{
+    background-image: url(./img/paises2.jpg);
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contenido-imagen{
+    margin-top: 100px;
+}
+
+input[type="text"]{
+    width: 58%;
+}
