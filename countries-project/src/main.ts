@@ -2,6 +2,9 @@ const lista = document.querySelector('#lista-paises') as HTMLDivElement;
 const formulario = document.querySelector('#formulario') as HTMLFormElement;
 const pais = document.querySelector('#pais') as HTMLInputElement;
 
+let nombreBusqueda = '';
+let paises: object[] = [];
+
 window.addEventListener('DOMContentLoaded', ()=>{
     consultarPaises();
     formulario?.addEventListener('submit', filtraPais);
@@ -13,13 +16,18 @@ async function consultarPaises(){
 
     fetch (url)
         .then (respuesta => respuesta.json())
-        .then (datos => mostrarPaises(datos))
+        .then (datos => asignarPaises(datos))
 }
 
-function mostrarPaises(paises: any){
+function asignarPaises(datos: any){
+    paises = datos;
+    mostrarPaises(paises);
+}
+
+function mostrarPaises(datos: any){
     limpiarHTML();
 
-    for(const pais of paises){
+    for(const pais of datos){
 
 
         const { name: {common}, flags: {png}, cca3 } = pais;
@@ -47,4 +55,31 @@ function limpiarHTML(){
 
 function filtraPais(e: Event){
     e.preventDefault();
+
+    nombreBusqueda = pais.value;
+    if(nombreBusqueda === ''){
+        mostrarPaises(paises);
+    }
+    else{
+        const resultado = paises.filter(filtrarNombre);
+        mostrarPaises(resultado);
+        if(!resultado.length){
+            noResultado();
+        }
+    }
+}
+
+function filtrarNombre(pais : any){
+    if(nombreBusqueda){
+        return nombreBusqueda === pais.name.common;
+    }
+    return pais;
+}
+
+function noResultado(){
+    limpiarHTML();
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta');
+    noResultado.textContent = 'No existe ese país';
+    lista.appendChild(noResultado);
 }

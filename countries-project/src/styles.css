@@ -142,3 +142,11 @@ input[type="submit"]:hover, .boton:hover{
     padding: 10px;
     text-align: center;
 }
+
+.alerta{
+    text-align: center;
+    color: white;
+    background-color: red;
+    height: 30px;
+    width: 100%;
+}
