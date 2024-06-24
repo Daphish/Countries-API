@@ -9,21 +9,12 @@ h1, h2, h3, h4, h5, h6 {
   h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
   h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 
-  @media (min-width: 550px) {
-    h1 { font-size: 5.0rem; }
-    h2 { font-size: 4.2rem; }
-    h3 { font-size: 3.6rem; }
-    h4 { font-size: 3.0rem; }
-    h5 { font-size: 2.4rem; }
-    h6 { font-size: 1.5rem; }
-  }
-
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+    font-size: 1.5em;
     line-height: 1.6;
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -34,6 +25,13 @@ body {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header .container{
+    border-bottom: 1px solid black;
+    display: block;
 }
 
 @media (min-width: 400px) {
@@ -45,10 +43,9 @@ body {
 @media (min-width: 550px) {
     .container {
       width: 80%;
-      display: flex;
-      flex-wrap: wrap;
     }
     .header .container{
+        display: flex;
         justify-content: space-between;
     }
 }
@@ -57,12 +54,12 @@ body {
     justify-content: center;
 }
 
-.header .container{
-    border-bottom: 1px solid black;
+.header a, .logo a{
+    text-decoration: none;
 }
 
-.header a{
-    text-decoration: none;
+.logo a{
+    color: black;
 }
 
 .logo, .link{
