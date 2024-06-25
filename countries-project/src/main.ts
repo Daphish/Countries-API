@@ -71,7 +71,7 @@ function filtraPais(e: Event){
 
 function filtrarNombre(pais : any){
     if(nombreBusqueda){
-        return nombreBusqueda === pais.name.common;
+        return pais.name.common.includes(nombreBusqueda);
     }
     return pais;
 }
