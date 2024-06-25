@@ -3,12 +3,12 @@ const formulario = document.querySelector('#formulario') as HTMLFormElement;
 const pais = document.querySelector('#pais') as HTMLInputElement;
 
 let nombreBusqueda = '';
-let paises: object[] = [];
+let paises: any[];
 
 window.addEventListener('DOMContentLoaded', ()=>{
     consultarPaises();
     formulario?.addEventListener('submit', filtraPais);
-})
+});
 
 //Funciones
 async function consultarPaises(){
@@ -44,6 +44,19 @@ function mostrarPaises(datos: any){
             </div>
         `
         lista.appendChild(tarjeta);
+    }
+    cargaEventListener();
+}
+
+function cargaEventListener(){
+    lista.addEventListener('click', redirecciona);
+}
+
+function redirecciona(e : Event){
+    const target = e.target as HTMLElement;
+    if(target?.classList.contains('boton')){
+        const codigo = target.previousElementSibling?.innerHTML;
+        window.location.href = "country.html?codigo="+codigo;
     }
 }
 
