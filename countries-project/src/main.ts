@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 });
 
 //Funciones
-async function consultarPaises(){
+function consultarPaises(){
     const url = 'https://restcountries.com/v3.1/all';
 
     fetch (url)

@@ -29,10 +29,17 @@ body {
     flex-wrap: wrap;
 }
 
-.container2{
-    background-color: red;
-    height: 300px;
+#titulo{
+    display: block;
+    text-align: center;
     margin-top: 20px;
+}
+
+.container2{
+    background-color: rgb(255, 173, 173);
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .header .container{
@@ -145,6 +152,12 @@ input[type="submit"]:hover, .boton:hover{
     box-sizing: border-box;
 }
 
+.cuadro{
+    width: 250px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
 .imagen-card{
     width: 100%;
     height: 50%;
@@ -164,4 +177,15 @@ input[type="submit"]:hover, .boton:hover{
     width: 100%;
     margin-top: 50px;
     font-size: 17px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #b8b8b8;
+}
+
+table{
+    width: 100%;
+    box-sizing: border-box;
 }
