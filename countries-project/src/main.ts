@@ -1,9 +1,11 @@
+import type { Pais } from './types.ts';
+
 const lista = document.querySelector('#lista-paises') as HTMLDivElement;
 const formulario = document.querySelector('#formulario') as HTMLFormElement;
 const pais = document.querySelector('#pais') as HTMLInputElement;
 
 let nombreBusqueda = '';
-let paises: any[];
+let paises: Pais[] = [];
 
 window.addEventListener('DOMContentLoaded', ()=>{
     consultarPaises();
@@ -24,7 +26,7 @@ function asignarPaises(datos: any){
     mostrarPaises(paises);
 }
 
-function mostrarPaises(datos: any){
+function mostrarPaises(datos: Pais[]){
     limpiarHTML();
 
     for(const pais of datos){
@@ -82,7 +84,7 @@ function filtraPais(e: Event){
     }
 }
 
-function filtrarNombre(pais : any){
+function filtrarNombre(pais : Pais){
     if(nombreBusqueda){
         return pais.name.common.includes(nombreBusqueda);
     }

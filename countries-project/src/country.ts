@@ -1,3 +1,5 @@
+import type { Pais } from './types.ts';
+
 const titulo = document.querySelector('#titulo') as HTMLHeadingElement;
 const imagen = document.querySelector('.container2') as HTMLDivElement;
 const tablas = document.querySelector('#tablas') as HTMLDivElement;
@@ -19,9 +21,10 @@ function consultarInfo(){
         .then (datos => mostrarInformacion(datos))
 }
 
-function mostrarInformacion(datos : any){
+function mostrarInformacion(datos : Pais[]){
     /* const pais = datos; */
     const { name: { common, official }, flags: { png }, cca2, ccn3, cca3, capital, region, subregion, area, population, languages } = datos[0];
+
 
     titulo.textContent = common; 
     imagen.style.backgroundImage = `url(${png})`;
