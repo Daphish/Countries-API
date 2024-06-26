@@ -29,15 +29,17 @@ body {
     flex-wrap: wrap;
 }
 
-#titulo{
+#titulo-container{
     display: block;
     text-align: center;
     margin-top: 20px;
 }
 
 .container2{
-    background-color: rgb(255, 173, 173);
-    height: 250px;
+    width: 80%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25vw;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -52,7 +54,7 @@ body {
       width: 85%;
     }
     .container2{
-        width: 70%;
+        width: 60%;
     }
 }
 
@@ -65,7 +67,7 @@ body {
         justify-content: space-between;
     }
     .container2{
-        width: 65%;
+        width: 50%;
     }
 }
 
